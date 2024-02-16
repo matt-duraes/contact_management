@@ -1,0 +1,22 @@
+
+.bloco_cards {
+    display: flex;
+    gap: 20px;
+}
+.card_parceiro {
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.automovel {
+    background-color: #f66f00;
+    color: white;
+}
+.farmacia {
+    background-color: #ffd700;
+    color: black;
+}
