@@ -23,3 +23,11 @@ Route::delete('/contato/{id}',[ContatoController::class, 'destroy'])->name('cont
 Route::get('/contato/edit/{id}', [ContatoController::class, 'edit'])->name('contato.edit');
 Route::put('/contato/update/{id}', [ContatoController::class, 'update'])->name('contato.update');
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', [ContatoController::class, 'dashboard'])->name('dashboard');
+});

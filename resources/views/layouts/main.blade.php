@@ -25,8 +25,16 @@
                 <a  class="nav-link" href="{{route('contato.create')}}">Novo Contato</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Entrar</a>
+                <a  class="nav-link" href="/dashboard">Edite e Delete contatos</a>
             </li>
+            @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Entrar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Registar</a>
+                </li>
+            @endguest
         </ul>
     </nav>
     <main id="bloco_eventos">

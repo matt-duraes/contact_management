@@ -19,6 +19,14 @@ class ContatoController extends Controller
         ]);
     }
 
+    public function dashboard()
+    {
+        $contatos = Contato::all();
+
+        return view('dashboard', [
+            'contatos' => $contatos
+        ]);
+    }
     public function create()
     {
         return view('contato.create');
