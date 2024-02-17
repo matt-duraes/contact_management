@@ -26,11 +26,7 @@ li:hover{
     color: brown;
 }
 #bloco_eventos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
+    padding: 30px;
 }
 /* footer */
 footer {

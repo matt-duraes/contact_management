@@ -2,7 +2,9 @@
 @section('title', $contato->nome)
 @section('content')
 
-<div class="col-md-10 offset-md-1">
+<div>
+    <h1>Dados do usuário</h1>
+    <br>
     <div class="row">
         <p>{{$contato->nome}}</p>
     </div>
@@ -10,7 +12,7 @@
         <p>{{$contato->email}}</p>
     </div>
     <div class="row">
-        <p>{{$contato->telefone}}</p>
+        <p>{{$contato->contato}}</p>
     </div>
 </div>
 
