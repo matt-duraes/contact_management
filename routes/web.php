@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContatoController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ContatoController::class, 'index']);       
+Route::get('/', [ContatoController::class, 'index']);
+Route::get('/contato', [ContatoController::class, 'create']);
+Route::get('/contato/{cod}', [ContatoController::class, 'show']);
+Route::delete('/contato/{cod}',[ContatoController::class, 'destroy']);
+Route::get('/contato/edit/{id}', [ContatoController::class, 'edit']);
+Route::post('/contato', [ContatoController::class, 'store']);

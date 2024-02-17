@@ -11,38 +11,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="/css/styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- JS -->
     <script src="/js/scripts.js"></script>
 </head>
 <body>
     <nav id="menu_site">
-        <div class="bloco_logo">
+        <div class="container_logo">
             <a href="/">
                 <img src="/img/hdcevents_logo.svg" alt="">
             </a>
         </div>
-        <ul class="bloco_links_menu">
+        <ul class="container_links_menu">
             <li>
-                <a href="/events/create">Criar eventos</a>
+                <a href="/contato">Add Contato</a>
             </li>
             <li>
-                <a href="/">Eventos</a>
+                <a href="/">Home</a>
             </li>
             <li>
-                <a href="/">Cadastrar</a>
-            </li>
-            <li>
-                <a href="/">Entrar</a>
+                <a href="#">Entrar</a>
             </li>
         </ul>
     </nav>
-    <div id="bloco_buscar"  style="background-image: url(/img/banner.jpg);">
+<!--     <div id="bloco_buscar"  style="background-image: url(/img/banner.jpg);">
         <div class="overlay_busca">
-            <h1>Busque um evento</h1>
-            <input type="text" name="buscar_evento" id="buscar_evento" placeholder="BUSCAR EVENTO">
+            <h1>Busque um contato</h1>
+            <input type="text" name="buscar_contato" id="buscar_contato" placeholder="BUSCAR CONTATO">
         </div>
-    </div>
+    </div> -->
     <main id="bloco_eventos">
         @if(session('msg'))
             <p class="msg">{{session('msg')}}</p>
@@ -50,7 +47,12 @@
         @yield('content')
     </main>
     <footer>
-        <p>HDC Events &copy; 2033</p>
+        <p>Matt &copy; 2024</p>
     </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </body>
 </html>
