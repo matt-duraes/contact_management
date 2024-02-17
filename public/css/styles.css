@@ -23,7 +23,7 @@ li {
     margin: 0px;
 }
 li:hover{
-    color: brown;
+    color:#f8d123;
 }
 #bloco_eventos {
     padding: 30px;

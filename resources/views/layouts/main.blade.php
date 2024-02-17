@@ -22,7 +22,7 @@
                 <a class="nav-link" href="{{route('contato.index')}}">Home</a>
             </li>
             <li class="nav-item">
-                <a  class="nav-link" href="{{route('contato.create')}}">Add Contato</a>
+                <a  class="nav-link" href="{{route('contato.create')}}">Novo Contato</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Entrar</a>
