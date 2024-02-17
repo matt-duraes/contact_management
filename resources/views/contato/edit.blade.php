@@ -3,7 +3,6 @@
 @section('content')
 <h1>Editando: {{$contato->nome}}</h1>
     <div id="event-create-container" class="col-md-6 offset md-3">
-
         <form action="{{ route('contato.update', $contato->id) }}" method="POST">
             @csrf
             @method('PUT')
@@ -18,11 +17,11 @@
             </div>
             <br>
             <div class="form-group">
-                <label class="form-label" for="contato">Telefone</label>
-                <input type="number" name="contato" id="contato"  value="{{$contato->contato}}">
+                <label for="contato">Telefone</label>
+                <input type="number" class="form-control" name="contato" id="contato"  value="{{$contato->contato}}">
+                <br>
             </div>
-            <br>
-            <input type="submit" value="Criar contato" class="btn btn-primary">
+            <input type="submit" value="Editar contato" class="btn btn-primary">
         </form>
     </div>
 @endsection

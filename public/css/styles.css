@@ -1,0 +1,48 @@
+body{
+    height: 100vh;
+}
+#menu{
+    width: 100%;
+    background-color: #353E48;
+    font-weight: bold;
+    height: 45px;
+    color: white;
+}
+
+#menu_site{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+    gap: 20px;
+    padding-right: 20px;
+}
+li {
+    cursor: pointer;
+    margin: 0px;
+}
+li:hover{
+    color: brown;
+}
+#bloco_eventos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+/* footer */
+footer {
+    text-align: center;
+    background-color: #353E48;
+    color: #FFF;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin-bottom: 0;
+}

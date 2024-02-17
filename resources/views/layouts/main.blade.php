@@ -16,30 +16,19 @@
     <script src="/js/scripts.js"></script>
 </head>
 <body>
-    <nav id="menu_site">
-        <div class="container_logo">
-            <a href="/">
-                <img src="/img/hdcevents_logo.svg" alt="">
-            </a>
-        </div>
-        <ul class="container_links_menu">
-            <li>
-                <a href="{{route('contato.create')}}">Add Contato</a>
+    <nav id="menu">
+        <ul id="menu_site">
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('contato.index')}}">Home</a>
             </li>
-            <li>
-                <a href="{{route('contato.index')}}">Home</a>
+            <li class="nav-item">
+                <a  class="nav-link" href="{{route('contato.create')}}">Add Contato</a>
             </li>
-            <li>
-                <a href="#">Entrar</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Entrar</a>
             </li>
         </ul>
     </nav>
-<!--     <div id="bloco_buscar"  style="background-image: url(/img/banner.jpg);">
-        <div class="overlay_busca">
-            <h1>Busque um contato</h1>
-            <input type="text" name="buscar_contato" id="buscar_contato" placeholder="BUSCAR CONTATO">
-        </div>
-    </div> -->
     <main id="bloco_eventos">
         @if(session('msg'))
             <p class="msg">{{session('msg')}}</p>
