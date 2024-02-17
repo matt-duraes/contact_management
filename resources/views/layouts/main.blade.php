@@ -24,10 +24,10 @@
         </div>
         <ul class="container_links_menu">
             <li>
-                <a href="/contato">Add Contato</a>
+                <a href="{{route('contato.create')}}">Add Contato</a>
             </li>
             <li>
-                <a href="/">Home</a>
+                <a href="{{route('contato.index')}}">Home</a>
             </li>
             <li>
                 <a href="#">Entrar</a>

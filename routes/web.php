@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ContatoController::class, 'index']);
-Route::get('/contato', [ContatoController::class, 'create']);
-Route::get('/contato/{cod}', [ContatoController::class, 'show']);
-Route::delete('/contato/{cod}',[ContatoController::class, 'destroy']);
-Route::get('/contato/edit/{id}', [ContatoController::class, 'edit']);
+Route::get('/', [ContatoController::class, 'index'])->name('contato.index');
+Route::get('/contato/create',[ContatoController::class, 'create'])->name('contato.create');
+Route::get('/contato/{id}', [ContatoController::class, 'show'])->name('contato.show');
 Route::post('/contato', [ContatoController::class, 'store']);
+Route::delete('/contato/{id}',[ContatoController::class, 'destroy'])->name('contato.destroy');
+Route::get('/contato/edit/{id}', [ContatoController::class, 'edit'])->name('contato.edit');
+Route::put('/contato/update/{id}', [ContatoController::class, 'update'])->name('contato.update');
+
