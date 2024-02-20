@@ -7,14 +7,20 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Contato;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Auth;
 
 class ContatoController extends Controller
 {
     public function index()
     {
-        $contatos = Contato::all();
+        return view('home.index');
+    }
 
-        return view('home.index', [
+    public function lista()
+    {
+        $contatos = Contato::all();
+        
+        return view ('contato.lista', [
             'contatos' => $contatos
         ]);
     }
@@ -27,6 +33,7 @@ class ContatoController extends Controller
             'contatos' => $contatos
         ]);
     }
+
     public function create()
     {
         return view('contato.create');
@@ -36,8 +43,8 @@ class ContatoController extends Controller
     {
         $dados = $this->validate($request, [
             'nome' => 'required|min:5',
-            'email' => 'required|email|unique:contatos|max:9',
-            'contato' => 'required|max:255',
+            'email' => 'required|email|unique:contatos',
+            'contato' => 'required|max:9',
         ]);
 
         $contato = Contato::create($dados);
@@ -71,6 +78,7 @@ class ContatoController extends Controller
     public function edit($id)
     {
         $contato = Contato::findOrFail($id);
+
         return view('contato.edit',[
             'contato' => $contato
         ]);
@@ -86,6 +94,12 @@ class ContatoController extends Controller
         Contato::findOrFail($request->id)->update($dados);
 
         return redirect('/')->with('msg', 'Contato editado com sucesso!');
+    }
+
+    public function Logout(){
+        Auth::logout();
+
+        return redirect('/');
     }
 
 }

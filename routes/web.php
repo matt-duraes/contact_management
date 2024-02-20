@@ -22,8 +22,8 @@ Route::post('/contato', [ContatoController::class, 'store']);
 Route::delete('/contato/{id}',[ContatoController::class, 'destroy'])->name('contato.destroy');
 Route::get('/contato/edit/{id}', [ContatoController::class, 'edit'])->name('contato.edit');
 Route::put('/contato/update/{id}', [ContatoController::class, 'update'])->name('contato.update');
-
-
+Route::get('/sair', [ContatoController::class, 'logout'])->name('logout');
+Route::get('/contato/lista', [ContatoController::class, 'lista'])->name('contato.lista');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

@@ -19,22 +19,26 @@
     <nav id="menu">
         <ul id="menu_site">
             <li class="nav-item">
-                <a class="nav-link" href="{{route('contato.index')}}">Home</a>
+                <a class="nav-link" href="{{route('contato.index')}}">
+                    <img src="https://organize-se.tech/wp-content/uploads/2023/12/Organize-se__1_-removebg-preview-1.png" alt="" width="200px">
+                </a>
             </li>
-            <li class="nav-item">
+<!--             <li class="nav-item">
                 <a  class="nav-link" href="{{route('contato.create')}}">Novo Contato</a>
-            </li>
-            <li class="nav-item">
+            </li> -->
+<!--             <li class="nav-item">
                 <a  class="nav-link" href="/dashboard">Edite e Delete contatos</a>
-            </li>
+            </li> -->
             @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Entrar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">Registar</a>
+                    <a class="nav-link" href="/login">Login</a>
                 </li>
             @endguest
+            @auth
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('logout')}}">Sair</a>
+                </li>
+            @endauth
         </ul>
     </nav>
     <main id="bloco_eventos">
