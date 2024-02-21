@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'lista')
+@section('title', 'list')
 @section('content')
 
 <table class="table">

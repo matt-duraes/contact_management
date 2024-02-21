@@ -2,7 +2,7 @@
 @section('title', 'Criar Contato')
 @section('content')
 <div id="event-create-container" class="col-md-6 offset md-3">
-    <form action="/contato" method="POST">
+    <form action="/novo-contato" method="POST">
         @csrf
         <div class="form-group">
             <label for="nome">Nome: </label>
@@ -23,4 +23,3 @@
     </form>
 </div>
 @endsection
-

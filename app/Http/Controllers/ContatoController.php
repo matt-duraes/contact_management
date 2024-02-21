@@ -16,11 +16,11 @@ class ContatoController extends Controller
         return view('home.index');
     }
 
-    public function lista()
+    public function list()
     {
         $contatos = Contato::all();
-        
-        return view ('contato.lista', [
+
+        return view('contato.list', [
             'contatos' => $contatos
         ]);
     }

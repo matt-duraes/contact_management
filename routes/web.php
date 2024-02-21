@@ -14,20 +14,33 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [ContatoController::class, 'index'])->name('contatoIndex');
+Route::get('/create',  [ContatoController::class, 'create'])->name('paginaAddContato');
+Route::get('/list',  [ContatoController::class, 'list'])->name('paginaListaContato');
+Route::post('/novo-contato', [ContatoController::class, 'store'])->name('formContato');
+Route::get('/contato/{id}', [ContatoController::class, 'show'])->name('visualizarInfoContato');
+Route::get('/edit/{id}', [ContatoController::class,'edit'])->name('editarContato');
+Route::delete('/{id}', [ContatoController::class,'destroy'])->name('deletarContato');
+Route::put('/update/{id}',[ContatoController::class,'update'])->name('atualizarContato');
 
-Route::get('/', [ContatoController::class, 'index'])->name('contato.index');
-Route::get('/contato/create',[ContatoController::class, 'create'])->name('contato.create');
-Route::get('/contato/{id}', [ContatoController::class, 'show'])->name('contato.show');
-Route::post('/contato', [ContatoController::class, 'store']);
-Route::delete('/contato/{id}',[ContatoController::class, 'destroy'])->name('contato.destroy');
-Route::get('/contato/edit/{id}', [ContatoController::class, 'edit'])->name('contato.edit');
-Route::put('/contato/update/{id}', [ContatoController::class, 'update'])->name('contato.update');
-Route::get('/sair', [ContatoController::class, 'logout'])->name('logout');
-Route::get('/contato/lista', [ContatoController::class, 'lista'])->name('contato.lista');
+/* Route::prefix('contato')->group(function()  {
+    Route::get('/edit/{id}', 'ContatoController@edit')->name('editarContato');
+    Route::delete('/{id}', 'ContatoController@destroy')->name('deletarContato');
+    Route::put('/update/{id}','ContatoController@update')->name('atualizarContato');
+});
+ */
+
+/* Route::controller(ContatoController::class)->group(function() {
+});
+ */
+
+/* Route::get('/sair', [ContatoController::class, 'logout'])->name('logout');
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
     Route::get('/dashboard', [ContatoController::class, 'dashboard'])->name('dashboard');
-});
+}); */
