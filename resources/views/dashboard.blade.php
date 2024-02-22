@@ -22,12 +22,12 @@
                     <td>{{$contato->email}}</td>
                     <td>{{$contato->contato}}</td>
                     <td>
-                        <a href="{{route('contato.edit', $contato->id)}}" class="btn btn-primary">
+                        <a href="{{route('editarContato', $contato->id)}}" class="btn btn-primary">
                             Editar
                         </a>
                     </td>
                     <td>
-                        <form action="{{route('contato.destroy', $contato->id)}}" method="POST">
+                        <form action="{{route('deletarContato', $contato->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger delete-btn">

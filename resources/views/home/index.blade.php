@@ -6,7 +6,7 @@
     <div class="bloco_conteudo">
         <h1>ORGANIZE-SE</h1>
         <p>Organize seus contatos da melhor maneira utilizando nossa plataforma</p>
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('dashboard')}}">
             Ver contatos
         </a>
     </div>

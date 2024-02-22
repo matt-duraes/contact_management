@@ -23,23 +23,26 @@
                     <img src="https://organize-se.tech/wp-content/uploads/2023/12/Organize-se__1_-removebg-preview-1.png" alt="" width="200px">
                 </a>
             </li>
-            <li class="nav-item">
-                <a  class="nav-link" href="{{route('paginaAddContato')}}">Novo Contato</a>
-            </li>
-            <li class="nav-item">
-                <a  class="nav-link" href="{{route('paginaListaContato')}}">Ver Contatos</a>
-            </li>
-          <!--   
-            @guest
+            <div class="bloco_teste">
+                @auth
+                    <li class="nav-item">
+                        <a  class="nav-link" href="{{route('paginaAddContato')}}">Novo Contato</a>
+                    </li>
+                @endauth
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('login')}}">Login</a>
-                </li>
-            @endguest
-            @auth
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('logout')}}">Sair</a>
-                </li>
-            @endauth -->
+                    <a  class="nav-link" href="{{route('dashboard')}}">Ver Contatos</a>
+                </li>  
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('login')}}">Login</a>
+                    </li>
+                @endguest
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('logout')}}">Sair</a>
+                    </li>
+                @endauth
+            </div>
         </ul>
     </nav>
     <main id="bloco_eventos">

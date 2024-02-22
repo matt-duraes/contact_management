@@ -50,6 +50,10 @@ li:hover{
     border-radius: 0.5rem;
     gap: 20px;
 }
+.bloco_teste{
+    display: flex;
+    gap: 20px;
+}
 .bloco_home a{
     padding: 10px 20px;
     color: white;

@@ -16,13 +16,23 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [ContatoController::class, 'index'])->name('contatoIndex');
 Route::get('/create',  [ContatoController::class, 'create'])->name('paginaAddContato');
-Route::get('/list',  [ContatoController::class, 'list'])->name('paginaListaContato');
+Route::get('/list',  [ContatoController::class, 'dashboard'])->name('dashboard');
+
 Route::post('/novo-contato', [ContatoController::class, 'store'])->name('formContato');
 Route::get('/contato/{id}', [ContatoController::class, 'show'])->name('visualizarInfoContato');
 Route::get('/edit/{id}', [ContatoController::class,'edit'])->name('editarContato');
 Route::delete('/{id}', [ContatoController::class,'destroy'])->name('deletarContato');
 Route::put('/update/{id}',[ContatoController::class,'update'])->name('atualizarContato');
 
+Route::get('/sair', [ContatoController::class, 'logout'])->name('logout');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', [ContatoController::class, 'dashboard'])->name('dashboard');
+});
 /* Route::prefix('contato')->group(function()  {
     Route::get('/edit/{id}', 'ContatoController@edit')->name('editarContato');
     Route::delete('/{id}', 'ContatoController@destroy')->name('deletarContato');
@@ -34,13 +44,6 @@ Route::put('/update/{id}',[ContatoController::class,'update'])->name('atualizarC
 });
  */
 
-/* Route::get('/sair', [ContatoController::class, 'logout'])->name('logout');
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', [ContatoController::class, 'dashboard'])->name('dashboard');
-}); */
+

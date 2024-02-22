@@ -3,7 +3,7 @@
 @section('content')
 <h1>Editando: {{$contato->nome}}</h1>
     <div id="event-create-container" class="col-md-6 offset md-3">
-        <form action="{{ route('contato.update', $contato->id) }}" method="POST">
+        <form action="{{ route('atualizarContato', $contato->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
